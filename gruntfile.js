@@ -67,6 +67,13 @@ module.exports = function (grunt) {
           livereload: true
         }
       },
+// Added command for grunt to watch for sass
+      sass: {
+        files: 'style/{,*/}*.{scss,sass}',
+        tasks: ['sass:dev']
+        }
+      },
+
       clientLESS: {
         files: defaultAssets.client.less,
         tasks: ['less', 'csslint'],
@@ -312,7 +319,9 @@ module.exports = function (grunt) {
       done();
     });
   });
-
+  //Sass files.
+  grunt.registerTask('default', ['lint', 'sass:dev', 'concurrent:default']);
+  
   // Lint CSS and JavaScript files.
   grunt.registerTask('lint', ['sass', 'less', 'eslint', 'csslint']);
 
