@@ -1,29 +1,25 @@
 'use strict';
 
-/**
- * Module dependencies.
- */
-var mongoose = require('mongoose'),
-  Schema = mongoose.Schema;
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 
-/**
- * Customer Schema
- */
 var CustomerSchema = new Schema({
-  name: {
+     firstname: {
     type: String,
     default: '',
-    required: 'Please fill Customer name',
+    required: 'Please fill customer first name',
     trim: true
   },
-  created: {
-    type: Date,
-    default: Date.now
+  lastname: {
+    type: String,
+    default: '',
+    required: 'Please fill customer last name',
+    trim: true
   },
-  user: {
-    type: Schema.ObjectId,
-    ref: 'User'
+  lastPurchase: {
+    type: Date,
+    default: ''
   }
-});
+  });
 
 mongoose.model('Customer', CustomerSchema);

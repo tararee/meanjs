@@ -2,14 +2,29 @@
   <div class="page-header">
     <h1>{{vm.customer._id ? 'Edit Customer' : 'New Customer'}}</h1>
   </div>
-  <div class="col-md-12">
+ <div class="col-md-12">
     <form name="vm.form.customerForm" class="form-horizontal" ng-submit="vm.save(vm.form.customerForm.$valid)" novalidate>
       <fieldset>
         <div class="form-group" show-errors>
-          <label class="control-label" for="name">Name</label>
-          <input name="name" type="text" ng-model="vm.customer.name" id="name" class="form-control" placeholder="Name" required>
-          <div ng-messages="vm.form.customerForm.name.$error" role="alert">
+          <label class="control-label" for="firstname">First Name</label>
+          <input name="firstname" type="text" ng-model="vm.customer.firstname" id="firstname" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.customerForm.firstname.$error" role="alert">
             <p class="help-block error-text" ng-message="required">Customer name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="lastname">Last Name</label>
+          <input name="lastname" type="text" ng-model="vm.customer.lastname" id="lastname" class="form-control" placeholder="Last Name" required>
+          <div ng-messages="vm.form.customerForm.lastname.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Customer last name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="lastPurchase">Last Purchase</label>
+          <input name="lastPurchase" type="text" ng-model="vm.customer.lastPurchase" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.customerForm.lastPurchase.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Last purchase is required.</p>
+          </div>
           </div>
         </div>
         <div class="form-group">

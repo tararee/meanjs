@@ -12,6 +12,7 @@ var config = require('../config'),
 module.exports.loadModels = function (callback) {
   // Globbing model files
   config.files.server.models.forEach(function (modelPath) {
+    console.log(modelPath);
     require(path.resolve(modelPath));
   });
 
