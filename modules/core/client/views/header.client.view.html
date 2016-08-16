@@ -1,12 +1,13 @@
 <div class="container" ng-controller="HeaderController as vm">
   <div class="navbar-header">
+<img src="favicon.ico" width= "25px" float="left">
     <button class="navbar-toggle" type="button" ng-click="vm.isCollapsed = !vm.isCollapsed">
       <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a ui-sref="home" class="navbar-brand">Super Swank Swag Store</a>
+    <a ui-sref="home" class="navbar-brand">super swank swag store</a>
   </div>
   <nav class="navbar-collapse" uib-collapse="!vm.isCollapsed" role="navigation">
     <ul class="nav navbar-nav" ng-if="vm.menu.shouldRender(vm.authentication.user);">
